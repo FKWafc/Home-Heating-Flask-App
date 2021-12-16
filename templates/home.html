@@ -1,0 +1,52 @@
+<! –– Basic html page with publish and subscribe buttons nd text boxes.
+Eventually this will be a UI for controlling heating within the house.  ––>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home Heating Flask App</title>
+  </head>
+      <body>
+
+          <header>
+              <h1>Home Heating</h1>
+          </header>
+
+        <main>
+          <form class="input" id="message-input" method="post">
+              <div class="field">
+                    <label for="publish">What would you like to say?</label>
+                    <input type="text" name="publish" id="publish" required />
+              </div>
+
+              <button>
+                    Send
+              </button>
+          </form>
+
+          <form class="output" id="message-output" method="get">
+              <div class="field">
+                    <label for="subscribe">Subscribe where?</label>
+                    <input type="text" name="subscribe" id="subscribe" required />
+              </div>
+
+              <button>
+                    receive
+              </button>
+          </form>
+
+
+
+        </main>
+
+        <footer>
+            <p>
+                Built by Finn
+            </p>
+        </footer>
+
+      </body>
+</html>
