@@ -22,9 +22,10 @@ mqtt = Mqtt(app)
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if request.method == 'POST':
-        message = request.form['publish']
-        mqtt.publish('topic', str(message))
-        message = None
+        if request.form.get('action1') == 'ON':
+            mqtt.publish('heating', str('ON'))
+        elif request.form.get('action2') == 'OFF':
+            mqtt.publish('heating', str('OFF'))
         return render_template('home.html')
 
     if request.method == 'GET':

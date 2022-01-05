@@ -16,16 +16,10 @@ Eventually this will be a UI for controlling heating within the house.  ––>
           </header>
 
         <main>
-          <form class="input" id="message-input" method="post">
-              <div class="field">
-                    <label for="publish">What would you like to say?</label>
-                    <input type="text" name="publish" id="publish" required />
-              </div>
-
-              <button>
-                    Send
-              </button>
-          </form>
+            <form method="post" action="/">
+                <input type="submit" value="ON" name="action1"/>
+                <input type="submit" value="OFF" name="action2" />
+            </form>
 
           <form class="output" id="message-output" method="get">
               <div class="field">
