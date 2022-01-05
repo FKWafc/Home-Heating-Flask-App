@@ -19,21 +19,16 @@ mqtt = Mqtt(app)
 
 # Publishing does work, currently the button only says hello world.
 # Currently working on trying to allow user to subscribe to mqtt messages (not working)
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         if request.form.get('action1') == 'ON':
             mqtt.publish('heating', str('ON'))
         elif request.form.get('action2') == 'OFF':
             mqtt.publish('heating', str('OFF'))
-        return render_template('home.html')
-
-    if request.method == 'GET':
-        #subscribe = request.form['subscribe']
-        #data = mqtt.subscribe(subscribe)
-
-        #return '''<h1>{}</h1>'''.format(data)
-        return render_template('home.html')
+        elif request.form.get('action3') == 'Check Heating':
+            return render_template('solar.html')
+    return render_template('home.html')
 
 
 # adding scraping tool in order to scrape data from other servers/webpages which contain heating information
